@@ -1,0 +1,4 @@
+datasets==2.21.0
+pandas
+pyarrow
+huggingface_hub
