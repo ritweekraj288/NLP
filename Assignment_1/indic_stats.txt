@@ -1,6 +1,6 @@
-Total Sentences: 50000
-Total Words: 919334
-Total Characters: 3403766
-Average Sentence Length: 18.38668
-Average Word Length: 3.7024258865657096
-Type Token Ratio: 0.05345500112037627
+Total Sentences: 1000
+Total Words: 18548
+Total Characters: 68268
+Average Sentence Length: 18.548
+Average Word Length: 3.6806124649557903
+Type Token Ratio: 0.2469808065559629
