@@ -1,0 +1,215 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" width="100%" height="480">
+  <defs>
+    <!-- Arrow Marker -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#4B5563" />
+    </marker>
+    <!-- State Drop Shadow -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-opacity="0.1" flood-color="#000"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#F9FAFB" rx="8" />
+
+  <!-- Title -->
+  <text x="480" y="30" text-anchor="middle" font-family="Inter, Roboto, sans-serif" font-size="18" font-weight="bold" fill="#1F2937">
+    Complete Minimized FST Noun Inflection Diagram (14 States)
+  </text>
+
+  <!-- Legend -->
+  <g transform="translate(730, 20)">
+    <rect width="210" height="110" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1.5" rx="6" filter="url(#shadow)"/>
+    <text x="10" y="20" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#374151">Legend (Input : Output)</text>
+    <text x="10" y="40" font-family="Inter, sans-serif" font-size="11" fill="#D97706">Orange: S-Addition</text>
+    <text x="10" y="55" font-family="Inter, sans-serif" font-size="11" fill="#2563EB">Blue: E-Insertion</text>
+    <text x="10" y="70" font-family="Inter, sans-serif" font-size="11" fill="#7C3AED">Purple: Y-Replacement</text>
+    <text x="10" y="85" font-family="Inter, sans-serif" font-size="11" fill="#059669">Green (Dashed): Singular Accept (ε : +N+SG)</text>
+    <text x="10" y="100" font-family="Inter, sans-serif" font-size="11" fill="#4B5563">ε represents empty string</text>
+  </g>
+
+  <!-- TRANSITIONS AND PATHS -->
+
+  <!-- Start Arrow -->
+  <path d="M 15 220 L 30 220" fill="none" stroke="#4B5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="22" y="210" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#4B5563" font-style="italic">start</text>
+
+  <!-- q_start to Root States -->
+  <path d="M 85 200 L 175 110" fill="none" stroke="#4B5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="120" y="145" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#4B5563">V : V</text>
+
+  <path d="M 90 220 L 170 210" fill="none" stroke="#4B5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="130" y="205" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#4B5563">C : C</text>
+
+  <path d="M 85 235 L 175 295" fill="none" stroke="#4B5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="125" y="275" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#4B5563">s : s</text>
+
+  <path d="M 80 245 L 170 395" fill="none" stroke="#4B5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="115" y="330" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#4B5563">c : c</text>
+
+  <!-- Self Loops on Root States (General processing) -->
+  <path d="M 185 63 C 175 20, 225 20, 215 63" fill="none" stroke="#4B5563" stroke-width="1.2" marker-end="url(#arrow)" />
+  <text x="200" y="32" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#4B5563">V : V</text>
+
+  <path d="M 185 183 C 175 140, 225 140, 215 183" fill="none" stroke="#4B5563" stroke-width="1.2" marker-end="url(#arrow)" />
+  <text x="200" y="152" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#4B5563">C : C</text>
+
+  <path d="M 185 283 C 175 240, 225 240, 215 283" fill="none" stroke="#4B5563" stroke-width="1.2" marker-end="url(#arrow)" />
+  <text x="200" y="252" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#4B5563">C : C</text>
+
+  <path d="M 185 383 C 175 340, 225 340, 215 383" fill="none" stroke="#4B5563" stroke-width="1.2" marker-end="url(#arrow)" />
+  <text x="200" y="352" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#4B5563">C : C</text>
+
+  <!-- Transitions to y states -->
+  <path d="M 230 90 L 330 90" fill="none" stroke="#D97706" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="280" y="82" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#D97706">y : y</text>
+
+  <path d="M 230 210 L 330 210" fill="none" stroke="#7C3AED" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="280" y="202" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#7C3AED">y : y</text>
+
+  <!-- Digraphs (ch, sh) to q_e_insert -->
+  <path d="M 225 400 L 335 360" fill="none" stroke="#2563EB" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="280" y="372" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#2563EB">h : h</text>
+
+  <path d="M 225 320 L 335 340" fill="none" stroke="#2563EB" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="280" y="322" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#2563EB">h : h</text>
+
+  <!-- E-Insertion Plural Path (Blue) -->
+  <path d="M 390 350 L 495 350" fill="none" stroke="#2563EB" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <text x="440" y="340" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#2563EB">e : ε</text>
+
+  <path d="M 228 320 Q 380 325, 498 342" fill="none" stroke="#2563EB" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="320" y="315" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#2563EB">e : ε</text>
+
+  <path d="M 545 340 Q 640 300, 735 255" fill="none" stroke="#2563EB" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <text x="640" y="285" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#2563EB">s : ε</text>
+
+  <!-- Y-Replacement Plural Path (Purple) -->
+  <path d="M 230 210 L 495 210" fill="none" stroke="#7C3AED" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <text x="440" y="200" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#7C3AED">i : y</text>
+
+  <path d="M 228 300 Q 360 250, 495 215" fill="none" stroke="#7C3AED" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="310" y="250" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#7C3AED">i : y</text>
+
+  <path d="M 225 410 Q 380 310, 498 222" fill="none" stroke="#7C3AED" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="330" y="290" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#7C3AED">i : y</text>
+
+  <path d="M 380 340 L 498 225" fill="none" stroke="#7C3AED" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="440" y="285" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#7C3AED">i : y</text>
+
+  <path d="M 545 210 L 615 210" fill="none" stroke="#7C3AED" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <text x="580" y="200" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#7C3AED">e : ε</text>
+
+  <path d="M 665 215 L 735 235" fill="none" stroke="#7C3AED" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <text x="700" y="215" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#7C3AED">s : ε</text>
+
+  <!-- S-Addition Plural Path (Orange) -->
+  <path d="M 230 90 Q 500 110, 735 228" fill="none" stroke="#D97706" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <text x="630" y="145" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#D97706">s : ε</text>
+
+  <path d="M 385 100 Q 560 140, 735 232" fill="none" stroke="#D97706" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <text x="580" y="160" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#D97706">s : ε</text>
+
+  <path d="M 230 210 Q 500 240, 732 240" fill="none" stroke="#D97706" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <text x="470" y="250" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#D97706">s : ε</text>
+
+  <path d="M 225 420 Q 500 320, 735 250" fill="none" stroke="#D97706" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="480" y="300" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#D97706">s : ε</text>
+
+  <!-- Plural Acceptance -->
+  <path d="M 790 240 L 850 240" fill="none" stroke="#2563EB" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="820" y="230" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#2563EB">ε : +N+PL</text>
+
+  <!-- Singular Acceptance Paths (Green Dashed) -->
+  <path d="M 230 80 L 490 55" fill="none" stroke="#059669" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrow)"/>
+  <text x="350" y="55" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#059669">ε : +N+SG</text>
+
+  <path d="M 226 195 L 495 60" fill="none" stroke="#059669" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrow)"/>
+  <text x="360" y="115" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#059669">ε : +N+SG</text>
+
+  <path d="M 375 195 L 495 65" fill="none" stroke="#059669" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrow)"/>
+  <text x="440" y="125" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#059669">ε : +N+SG</text>
+
+  <path d="M 375 330 Q 420 180, 500 78" fill="none" stroke="#059669" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#arrow)"/>
+  <text x="420" y="170" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#059669">ε : +N+SG</text>
+
+  <!-- STATES LAYER -->
+
+  <!-- q_start -->
+  <g transform="translate(60, 220)" filter="url(#shadow)">
+    <circle cx="0" cy="0" r="28" fill="#E5E7EB" stroke="#4B5563" stroke-width="2"/>
+    <text x="0" y="4" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1F2937">q_start</text>
+  </g>
+
+  <!-- Root States -->
+  <g transform="translate(200, 90)" filter="url(#shadow)">
+    <circle cx="0" cy="0" r="25" fill="#FEF3C7" stroke="#D97706" stroke-width="2"/>
+    <text x="0" y="4" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#92400E">q_vow</text>
+  </g>
+
+  <g transform="translate(200, 210)" filter="url(#shadow)">
+    <circle cx="0" cy="0" r="25" fill="#FEF3C7" stroke="#D97706" stroke-width="2"/>
+    <text x="0" y="4" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#92400E">q_con</text>
+  </g>
+
+  <g transform="translate(200, 310)" filter="url(#shadow)">
+    <circle cx="0" cy="0" r="25" fill="#FEF3C7" stroke="#D97706" stroke-width="2"/>
+    <text x="0" y="4" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#92400E">q_s</text>
+  </g>
+
+  <g transform="translate(200, 410)" filter="url(#shadow)">
+    <circle cx="0" cy="0" r="25" fill="#FEF3C7" stroke="#D97706" stroke-width="2"/>
+    <text x="0" y="4" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#92400E">q_c</text>
+  </g>
+
+  <g transform="translate(360, 90)" filter="url(#shadow)">
+    <circle cx="0" cy="0" r="25" fill="#FEF3C7" stroke="#D97706" stroke-width="2"/>
+    <text x="0" y="4" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#92400E">q_vow_y</text>
+  </g>
+
+  <g transform="translate(360, 210)" filter="url(#shadow)">
+    <circle cx="0" cy="0" r="25" fill="#FEF3C7" stroke="#D97706" stroke-width="2"/>
+    <text x="0" y="4" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#92400E">q_con_y</text>
+  </g>
+
+  <g transform="translate(360, 350)" filter="url(#shadow)">
+    <circle cx="0" cy="0" r="28" fill="#FEF3C7" stroke="#D97706" stroke-width="2"/>
+    <text x="0" y="4" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#92400E">q_e_insert</text>
+  </g>
+
+  <!-- Spelling Intermediate States -->
+  <g transform="translate(520, 350)" filter="url(#shadow)">
+    <circle cx="0" cy="0" r="25" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.5"/>
+    <text x="0" y="4" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#1E40AF">q_es</text>
+  </g>
+
+  <g transform="translate(520, 210)" filter="url(#shadow)">
+    <circle cx="0" cy="0" r="25" fill="#F3E8FF" stroke="#7C3AED" stroke-width="1.5"/>
+    <text x="0" y="4" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#6D28D9">q_Y_i</text>
+  </g>
+
+  <g transform="translate(640, 210)" filter="url(#shadow)">
+    <circle cx="0" cy="0" r="25" fill="#F3E8FF" stroke="#7C3AED" stroke-width="1.5"/>
+    <text x="0" y="4" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#6D28D9">q_Y_ie</text>
+  </g>
+
+  <g transform="translate(760, 240)" filter="url(#shadow)">
+    <circle cx="0" cy="0" r="28" fill="#F3F4F6" stroke="#4B5563" stroke-width="2"/>
+    <text x="0" y="4" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#1F2937">q_PL_mid</text>
+  </g>
+
+  <!-- Accepting States (Double Circles) -->
+  <g transform="translate(520, 50)" filter="url(#shadow)">
+    <circle cx="0" cy="0" r="28" fill="#D1FAE5" stroke="#059669" stroke-width="2.2"/>
+    <circle cx="0" cy="0" r="23" fill="#D1FAE5" stroke="#059669" stroke-width="1"/>
+    <text x="0" y="4" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#065F46">q_SG</text>
+  </g>
+
+  <g transform="translate(880, 240)" filter="url(#shadow)">
+    <circle cx="0" cy="0" r="28" fill="#DBEAFE" stroke="#2563EB" stroke-width="2.2"/>
+    <circle cx="0" cy="0" r="23" fill="#DBEAFE" stroke="#2563EB" stroke-width="1"/>
+    <text x="0" y="4" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1E40AF">q_PL</text>
+  </g>
+
+</svg>
